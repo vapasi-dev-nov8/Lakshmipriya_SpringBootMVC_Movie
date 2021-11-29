@@ -26,12 +26,13 @@ public class MovieEntity {
     }
 
     public static MovieEntity entityFrom(MovieDto movieDto) {
-        return new MovieEntity(null, movieDto.getName(), movieDto.getActorName(), movieDto.getDirectorName());
+        return new MovieEntity(movieDto.getId(), movieDto.getName(),  movieDto.getDirectorName() , movieDto.getActorName());
     }
 
     public MovieDto toMovieDto() {
-        return new MovieDto(this.id, this.name, this.actorName, this.directorName);
+        return new MovieDto(this.id, this.name,  this.directorName , this.actorName);
     }
+
     @Override
     public String toString() {
         return "MovieEntity{" +
